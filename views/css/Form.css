@@ -1,0 +1,21 @@
+form {
+    margin: 0 auto;
+    width: 310px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+
+form div + div {
+    margin-top: 1em;
+}
+
+label {
+    display: inline-block;
+    width: 110px;
+    text-align: right;
+}
+
+button {
+	margin-left: 115px;
+}

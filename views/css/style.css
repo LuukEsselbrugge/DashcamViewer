@@ -1,0 +1,773 @@
+body {
+    background-color: #eeeeee;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+newSub {
+    display:block;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.inputText{
+    border: 1px solid lightgray;
+    background-color: #e7e7e7;
+    padding-left: 5px;
+    width: 300px;
+    height: 30px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.content{
+    display: inline-block;
+    max-width: 1024px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 100px;
+    position: relative;
+    text-align: left;
+}
+
+.contentPortfolio{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.contentBlockGast{
+    background-color: white;
+    min-height: 50px;
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+    position: relative;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.contentBlockGast a{
+    color: black;
+}
+
+.contentBlockTitleGast{
+    font-size: 20px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.contentBlockTitleSubmissions{
+    font-size: 20px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+	padding-bottom: 0px;
+}
+
+.contentBlockTitleGast2{
+    font-size: 16px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+	padding-bottom: 15px;
+
+}
+
+.contentBlockDateGast{
+    color: grey;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.contentBlockDateGast2{
+    color: grey;
+    font-size: 12px;
+}
+
+
+.contentBlockImageGast{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #DDD;
+    object-fit: cover;
+
+}
+
+.contentBlockDescriptionGast{
+    color: #212121;
+    margin-left: 60px;
+}
+
+.contentBlockDescriptionGast2{
+    color: #212121;
+	font-size: 14px;
+}
+
+.tweetButtons{
+    height: 35px;
+    padding-right: 4px;
+}
+.tweetButton {
+    color: #ffffff;
+    min-width: 75px;
+    min-height: 30px;
+    border: none;
+    border-bottom: 2px solid #426483;
+    border-radius: 2px;
+    background-color: #6591b3;
+    -webkit-transition: background-color 70ms linear;
+    -moz-transition: background-color 70ms linear;
+    -o-transition: background-color 70ms linear;
+    -ms-transition: background-color 70ms linear;
+    transition: background-color 70ms linear;
+    position: relative;
+    top: 5px;
+    float: right;
+}
+
+.tweetButton i {
+    font-size: 15px;
+    position: relative;
+    top: 3px;
+}
+
+.tweetButton:hover {
+    background-color: #527897;
+    cursor: pointer;
+    -webkit-transition: background-color 70ms linear;
+    -moz-transition: background-color 70ms linear;
+    -o-transition: background-color 70ms linear;
+    -ms-transition: background-color 70ms linear;
+    transition: background-color 70ms linear;
+}
+
+.topMenuTitle{
+    display: inline-block;
+    color: #525252;
+    padding: 10px;
+    float: left;
+
+}
+
+.topMenuInner{
+    width: 100%;
+    max-width: 1024px;
+    display: inline-block;
+    height: 34px;
+}
+
+.topMenuSecond{
+    background-color: white;
+    min-height: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.topMenu{
+    background-color: white;
+    min-height: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.topMenuItem{
+    display: inline-block;
+    color: #525252;
+    padding: 10px;
+}
+
+.topMenuItemSelected{
+    padding-bottom: 8px;
+    border-bottom: 2px solid #6d9fc0;
+}
+
+.topMenuItem:hover{
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.videoThumb{
+    background-position: center;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+}
+
+.contentBlock{
+    background-color: white;
+    min-height: 50px;
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+    position: relative;
+    flex-grow: 1;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.contentBlockTitle{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+
+.chartLabel{
+    display: inline-block;
+    color: #858585;
+    width: 100%;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.gauge-icon-only{
+    display: inline-block;
+    color: #858585;
+    /*background-color: #eeeeee;*/
+    width: 5%;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 2px;
+    padding-top: 12px;
+}
+
+.gauge{
+    display: inline-block;
+    color: #858585;
+    background-color: #eeeeee;
+    width: 100%;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 2px;
+    padding-top: 2px;
+}
+
+.deleteButton{
+    display: inline-block;
+    color: #fff;
+    background-color: #d65457;
+    width: 25px;
+    margin-right: 2px;
+    text-align: center;
+    border-radius: 2px;
+    padding-top: 2px;
+    float: right;
+    cursor: pointer;
+}
+
+.gauge:last-child {
+    margin-right: 0px;
+}
+
+.gaugeSmall{
+    width: 100px;
+    margin-right: 2px;
+}
+
+.gaugeBlock{
+    display: flex;
+    justify-content: center;
+}
+.contentBlockDescription{
+    color: #212121;
+}
+
+.contentBlockDescriptionFile
+{
+   width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.fileCircle
+{
+    background-color: #5c7784;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 55px;
+    margin-top: -10px;
+}
+
+.fileCircle i{
+    color: white;
+    font-size: 45px;
+    position: relative;
+    top: 17px;
+}
+
+.contentBlockImage {
+    background: url("/public/image/rene.jpg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    min-width: 250px;
+    min-height: 250px;
+}
+
+.contentBlockFiles{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #e1e1e1;
+}
+
+.contentBlockFile{
+    width: auto;
+    height: inherit;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #333333;
+}
+
+.contentBlockFile i{
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+}
+
+.banner{
+    background: #263138 no-repeat center;
+    height: 200px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.bannerImage{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left;
+    top: 40px;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #DDD;
+    border: 5px solid white;
+
+}
+
+.bannerTextItems{
+    height: auto;
+    width: auto;
+    float: left;
+    text-align: left;
+    top: 70px;
+    position: relative;
+}
+
+.bannerText{
+    color: white;
+    font-size: 32px;
+}
+
+.bannerTextSecond{
+    color: white;
+}
+
+
+.bannerContent{
+    max-width: 1024px;
+    width: 100%;
+    height: 200px;
+    display: inline-block;
+}
+
+.footer{
+    background-color: #37474F;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    line-height: 50px;
+    color: white;
+    height: 50px;
+}
+
+.navBar{
+    background-color: #37474F;
+    box-shadow: 0 1px 0 #263138;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navBarContent{
+    max-width: 1044px;
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+}
+
+.navBarItem{
+    display: inline-block;
+    float: left;
+    height: 50px;
+    line-height: 51px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color .1s ease-out;
+    color: white;
+}
+
+.navBarItemRight{
+    float: right;
+    margin-right: 0;
+}
+
+.navBarItem:hover{
+    background-color: #313E44;
+}
+
+.navBarItem i{
+    position: relative;
+    top: 3px;
+    font-size: 20px;
+}
+
+.navBarItemRight i{
+    position: relative;
+    top: 5px;
+    font-size: 20px;
+}
+
+.navBarItemRight a{
+    color: white;
+}
+.dropdownUserImage{
+    height: 30px;
+    width: 30px;
+    margin-top: -2.5px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Teacher Page Specific */
+#teacherTable table {
+    margin: 0 auto;
+    border-spacing: 0;
+}
+
+#teacherTable td {
+    min-width: 150px;
+    max-width: 450px;
+}
+
+#teacherTable img {
+    padding: 5px;
+}
+
+#teacherTable a {
+    color: black;
+    text-decoration: underline;
+}
+
+#teacherTable tr:nth-child(even), #teacherTable tr:nth-child(even) a {
+    background-color: #37474F;
+    color: white;
+}
+
+#teacherTable td, #teacherTable th {
+    padding: 5px 15px;
+}
+
+#typePicker {
+    float: right;
+}
+
+@media (max-width: 1024px) {
+    /* CSS that should be displayed if width is equal to or less than 1024PX goes here */
+    .content {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+
+    .logo {
+        width: 150px;
+        position: relative;
+        top: 20px;
+        height: 150px;
+        float: left;
+
+    }
+
+    @media (max-width: 500px) {
+        .navBarItem {
+            font-size: 0;
+        }
+
+        .navBarItem i {
+            top: 9px;
+        }
+    }
+
+    .button {
+        color: #ffffff;
+        min-width: 75px;
+        min-height: 30px;
+        border: none;
+        border-bottom: 2px solid #426483;
+        border-radius: 2px;
+        background-color: #6591b3;
+        -webkit-transition: background-color 70ms linear;
+        -moz-transition: background-color 70ms linear;
+        -o-transition: background-color 70ms linear;
+        transition: background-color 70ms linear;
+        position: relative;
+        float: right;
+    }
+
+    .button i {
+        font-size: 15px;
+        position: relative;
+        top: 3px;
+    }
+
+    .button:hover {
+        background-color: #527897;
+        cursor: pointer;
+        -webkit-transition: background-color 70ms linear;
+        -moz-transition: background-color 70ms linear;
+        -o-transition: background-color 70ms linear;
+        transition: background-color 70ms linear;
+    }
+}
+
+.dropDown{
+    position: absolute;
+    background-color: #fff;
+    width: 200px;
+    height: auto;
+    margin-left: -10px;
+    border: 1px solid #c7c7c7;
+    display: none;
+}
+
+.dropDownAdd{
+    position: absolute;
+    background-color: #fff;
+    width: 200px;
+    height: auto;
+    margin-left: -115px;
+    top: 30px;
+    border: 1px solid #c7c7c7;
+    display: none;
+    z-index: 10;
+    font-size: 15px;
+}
+
+.dropDownItemAdd{
+    display: inline-block;
+    width: inherit;
+    height: 25px;
+    color: black;
+    text-align: left;
+    border-bottom: 1px solid #c7c7c7;
+}
+
+.dropDownItemAdd:hover{
+    background-color: #f0f0f0;
+}
+
+.dropDownItemAdd a{
+    margin-left: 5px;
+    color: black;
+}
+
+
+.dropDownItem{
+    display: inline-block;
+    width: inherit;
+    height: 50px;
+    color: black;
+    text-align: left;
+    border-bottom: 1px solid #c7c7c7;
+}
+
+.dropDownItem:hover{
+    background-color: #f0f0f0;
+}
+
+.dropDownItem a{
+    margin-left: 5px;
+    color: black;
+}
+
+.drop-trigger{
+    position: absolute;
+    z-index: 100;
+    top: 0px;
+    left: -10px;
+    width: 10px;
+    height: 200px;
+}
+
+.portfolioEditMenu{
+    width: 100%;
+    height: 40px;
+}
+
+.button-save{
+    float: right;
+    margin-right: 5px;
+}
+
+.button-add{
+    float: right;
+    margin-right: 5px;
+}
+
+.button {
+    color: #ffffff;
+    min-width: 75px;
+    min-height: 30px;
+    border: none;
+    border-bottom: 2px solid #368339;
+    border-radius: 2px;
+    background-color: #5cb376;
+    -webkit-transition: background-color 70ms linear;
+    -moz-transition: background-color 70ms linear;
+    -o-transition: background-color 70ms linear;
+    -ms-transition: background-color 70ms linear;
+    transition: background-color 70ms linear;
+    position: relative;
+}
+
+.button i {
+    font-size: 15px;
+    position: relative;
+    top: 3px;
+}
+
+.button:hover {
+    background-color: #48905c;
+    cursor: pointer;
+    -webkit-transition: background-color 70ms linear;
+    -moz-transition: background-color 70ms linear;
+    -o-transition: background-color 70ms linear;
+    -ms-transition: background-color 70ms linear;
+    transition: background-color 70ms linear;
+}
+
+.button-trash{
+    background-color: #b32029;
+    border-bottom: 2px solid #801c20;
+    display: none;
+}
+
+.button-trash:hover{
+    background-color: #88181f;
+}
+
+.button-disabled{
+    color: #eeeeee;
+    border-bottom: 0px;
+    background-color: #527897;
+}
+
+.button-disabled:hover{
+    background-color: #527897;
+}
+
+.navBarLogo{
+    display: inline-block;
+    float: left;
+    height: 50px;
+    background-image: url("/public/image/Logo.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -18px 2px;
+    width: 50px;
+}
+
+.contentBlockCheck{
+    width: auto;
+    float: right;
+    height: inherit;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #333333;
+}
+
+.contentBlockCheck i{
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+}
+
+.contentBlockCheck:hover .toolTip {
+    visibility: visible;
+}
+
+.submissionform input{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.submissionform textarea{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=file]{
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+select[name=type]{
+	margin-bottom: 5px;
+}
+
+.toolTip{
+    position: absolute;
+    z-index: 10;
+    background-color: grey;
+    color: white;
+    border-radius: 2px;
+    text-align: center;
+    padding: 10px;
+    visibility: hidden;
+}
+
+.submissionButton{
+    display: inline-block;
+    float: right;
+    margin-left: 10px;
+}
+
+.submissionButton i{
+    color: #292929;
+}

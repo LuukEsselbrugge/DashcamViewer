@@ -1,0 +1,67 @@
+#sfileupload {
+    float: left;
+    width: 250px;
+    height: 200px;
+}
+.spropic {
+	height: 120px;
+	width: 120px;
+    border-radius: 50%;
+	margin-left: 65px;
+	margin-top: 50px;
+}
+.uploadsubmit {
+	margin: auto;
+}
+#usersettings {
+	float: right;
+	width: 734px;
+	min-height: 500px;
+}
+#topsetting {
+	margin-top: 50px;
+}
+.editsetting {
+	width: 734px;
+	float:right;
+	margin-bottom: 20px;
+}
+.row{
+	width: 100%;
+}
+.editsetting1 {
+	float: left;
+    margin-left: 70px;
+    margin-right: 200px;
+	margin-bottom: 10px;
+}
+.editsetting2 {
+	float: left;
+    margin-left: 54px;
+    margin-right: 200px;
+	margin-bottom: 10px;
+}
+.editsetting3 {
+	float: left;
+}
+.showfield {
+	float: left;
+	height: 21px;
+}
+.editfield {
+	float: left;
+	height: 21px;
+}
+.wijzigbtn {
+	float: right;
+	margin-left: 30px;
+}
+.bevestigbtn {
+	float: right;
+	margin-left: 30px;
+}
+input.editsettings {
+	width: 200px;
+	float: left;
+	margin-left: 10px;
+}
