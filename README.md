@@ -4,7 +4,8 @@
 ## What is DashcamViewer?
 A way to view trips uploaded by my Dashcam project
 
-[Images](https://imgur.com/a/HetpOQ9)
+![Preview](https://i.imgur.com/E8bVDzm.jpg)
+[More Images](https://imgur.com/a/HetpOQ9)
 
 **Work in progress**
 
