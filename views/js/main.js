@@ -207,11 +207,10 @@ function geocode(lon, lat, elem){
     };
     xhr.send();
 }
-
-
+ 
 function update(){
     var video = document.getElementById("video");
-    var time = parseInt(videoDateTime) + Math.floor(video.currentTime) + 2 ;
+    var time = parseInt(videoDateTime) + Math.floor(video.currentTime);
 
     if(polylinePoints.length > 0) {
         if(document.getElementById("followCar").checked) {
@@ -220,14 +219,35 @@ function update(){
         caricon.setLatLng([data[time]["Lon"], data[time]["Lat"]]);
     }
 
+    var gears = {"0": 0,"0.008": 1, "0.009": 1, "0.012": 2, "0.013": 2, "0.014": 2, "0.015": 2, "0.019": 3, "0.020": 3, "0.021": 3, "0.022": 3, "0.025": 4, "0.026": 4, "0.027": 4, "0.028": 4, "0.032": 5, "0.033": 5, "0.034": 5, "0.035": 5};
+    gear = 0;
+    if(data[time] != null){
+        gear = gears[toFixed(parseFloat(data[time]["Speed"]/data[time]["RPM"]),3)+""];
+    }
+
     document.getElementById("Speed").innerHTML = data[time]["Speed"] + " Km/h";
+    drawGraph(time,document.getElementById("Speed").parentElement,"Speed");
+
     document.getElementById("RPM").innerHTML = data[time]["RPM"] + " Rpm";
-    // document.getElementById("Throttle").innerHTML = "Throttle " + data[time]["Throttle"] + " %";
+    drawGraph(time,document.getElementById("RPM").parentElement,"RPM");
+
+    document.getElementById("Gear").innerHTML = gear;
 
     document.getElementById("Time").innerHTML = data[time]["Timestamp"].split(" ")[1];
 
     document.getElementById("CTemp").innerHTML = "Coolant " + data[time]["CTemp"] + " &deg;C";
+    drawGraph(time,document.getElementById("CTemp").parentElement,"CTemp");
+
     document.getElementById("ATemp").innerHTML = "Intake " + data[time]["ATemp"] + " &deg;C";
+    drawGraph(time,document.getElementById("ATemp").parentElement,"ATemp");
+
+    document.getElementById("Throttle").innerHTML = "Throttle " + data[time]["Throttle"] + " %";
+    drawGraph(time,document.getElementById("Throttle").parentElement,"Throttle");
+}
+
+function toFixed(num, fixed) {
+    var re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
+    return num.toString().match(re)[0];
 }
 
 function changeTab(elem,tab){
@@ -249,9 +269,104 @@ function changeTab(elem,tab){
     }
 }
 
+
+//Graph
+
+function drawLine(sourceX,sourceY,destnationX,destnationY,context){
+  context.beginPath();
+  context.moveTo(sourceX, sourceY);
+  context.lineTo(destnationX, destnationY);
+  context.stroke();
+}
+
+function calcScale(data,boxSize,width){
+  var result = new Object();
+  result.stepInPixel = width / data.length; 
+
+
+  var min = Number.POSITIVE_INFINITY;
+  var max = Number.NEGATIVE_INFINITY;
+  for(var i = 0; i < data.length;i++){
+    if(data[i] < min){
+      min = data[i];
+    }
+    if(data[i] > max){
+      max = data[i];
+    }
+
+  }  
+
+  var delta = max - min;
+
+  result.offsetY = min;
+  result.multiplicatorY = ((boxSize / delta) / 100) *90;  
+  return result; 
+}
+
+function drawGraph(time,gauge,field){
+    var gdata = [];
+    var x = 50;
+    while(x >= 0){
+        if(data[time-x] != null){
+            gdata.push(parseInt(data[time-x][field]));
+        }else{
+             //fix for issues with missing data in array get nearest working item
+             var t = 0;
+             while(data[time-x + t] == null){
+                t++;
+             }
+            gdata.push(data[time-x + t][field]);
+        }
+        x--;
+    }
+    while(x <= 50){
+        if(data[time+x] != null){
+            gdata.push(parseInt(data[time+x][field]));
+        }else{
+             //fix for issues with missing data in array get nearest working item
+             var t = 0;
+             while(data[time+x +t] == null){
+                t--;
+             }
+            gdata.push(data[time+x + t][field]);
+        }
+        x++;
+    }
+    var canvas = document.createElement('canvas');
+    canvas.width = gauge.offsetWidth;
+    canvas.height = gauge.offsetHeight;
+    var context = canvas.getContext('2d');
+    context.strokeStyle = "#bdbdbd";
+  var boxSize = gauge.offsetHeight;
+
+  var scale = calcScale(gdata,boxSize,gauge.offsetWidth);
+
+  var stepInPixel = scale.stepInPixel;
+  var multiplicatorY = scale.multiplicatorY;
+  var offsetY = scale.offsetY;
+
+  var offset = 0;
+  var lastY = 0;
+  for(var i = 0; i < gdata.length;i++){
+    var currentY =  ((gdata[i] * multiplicatorY) * -1) + (offsetY* multiplicatorY)  + boxSize ;
+    if(i == 0){
+      lastY = currentY;
+    }
+
+    drawLine(offset,lastY,offset+stepInPixel,currentY,context)
+    offset += stepInPixel;
+    lastY = currentY;
+
+  } 
+   gauge.style.backgroundImage = 'url(' + canvas.toDataURL() + ')';
+}
+
 Number.prototype.pad = function(size) {
     var s = String(this);
     while (s.length < (size || 2)) {s = "0" + s;}
     return s;
 }
+
+
+
 

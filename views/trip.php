@@ -22,16 +22,18 @@
 <div class="content tab-playback" style="display: none;">
 
     <div class="contentBlock">
-        <video id="video" style="width: 100%;" controls><source src="<?=($_SERVER['REMOTE_ADDR'] == "192.168.0.1") ? "http://192.168.0.200/dashcam/" : "" ?>video/<?=$_GET["uri2"]?>.mp4" type="video/mp4"></video>
+        <video id="video" style="width: 100%;" controls><source src="<?=($_SERVER['REMOTE_ADDR'] == "192.168.0.1") ? "http://192.168.0.200/dashcam/" : "" ?>/video/<?=$_GET["uri2"]?>.mp4" type="video/mp4"></video>
     </div>
 
     <div class="contentBlock gaugeBlock">
         <div class="gauge"><i class="mdi mdi-clock mdi-24px"></i> <br> <span id="Time">00:00:00</span></div>
         <div class="gauge"><i class="mdi mdi-speedometer mdi-24px"></i> <br> <span id="Speed">0 Km/h</span></div>
         <div class="gauge"><i class="mdi mdi-engine mdi-24px"></i> <br> <span id="RPM">0 Rpm</span></div>
-        <!-- <div class="gauge"><i class="mdi mdi-arrow-collapse-down mdi-24px"></i> <br> <span id="Throttle">0</span></div> -->
+        <div class="gauge"><i class="mdi mdi-settings mdi-24px"></i> <br> <span id="Gear">0</span></div>
 	<div class="gauge"><i class="mdi mdi-water mdi-24px"></i> <br> <span id="CTemp">Coolant 0</span></div>
 	<div class="gauge"><i class="mdi mdi-fan mdi-24px"></i> <br> <span id="ATemp">Intake 0</span></div>
+	<div class="gauge"><i class="mdi mdi-weather-windy mdi-24px"></i> <br> <span id="Throttle">0</span></div>
+    
     </div>
 
     <div id="map" class="contentBlock" style="height: 300px"></div>

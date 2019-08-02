@@ -1,7 +1,7 @@
 <?php
 
 define("DBU","root");
-define("DBP","password");
+define("DBP","root");
 define("DBN","Dashcam");
 
 
